@@ -5,7 +5,6 @@ class App extends React.Component {
   state = {
     count: 0,
   };
-
   add = () => {
     this.setState((current) => ({
       count: current.count + 1,
@@ -16,7 +15,17 @@ class App extends React.Component {
       count: current.count - 1,
     }));
   };
+  componentDidMount() {
+    console.log("Component Rendered");
+  }
+  componentDidUpdate() {
+    console.log("I just Updated");
+  }
+  componentWillUnmount() {
+    console.log("Goodbye");
+  }
   render() {
+    console.log("I'm rendering");
     return (
       <div>
         <h1>I'm a class {this.state.count}</h1>
